@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main id="target" class="target" name="target"></main>
+    <article id="article"></article>
+    <footer></footer>
+    <script>
+      /*
+       Необходимо найти и записать в переменную узел-элемент <main></main> всеми возможными способами
+
+       Например : 
+
+       const main1 = "Ваш код"
+       console.log('main1', main1);  // output: "main1" <main id="target" class="target" name="target"></main>
+
+       const main2 = ...
+       console.log('main2', main2);  // output: "main2" <main id="target" class="target" name="target"></main>
+
+       и т. д.
+
+       Важно : Если решаем идти по узлам с корня документа, то идем только по кратчайшему пути
+      */
+
+      const mainId = document.getElementById("target");
+      const mainClassName = document.getElementsByClassName("target");
+      const mainName = document.getElementsByName("target");
+      const mainTagName = document.getElementsByTagName("main");
+
+      const mainSelectorClassName = document.querySelector(".target");
+      const mainSelectorId = document.querySelector("#target");
+
+      const header = document.querySelector("#header");
+      const mainNextSibling = header.nextElementSibling;
+
+      const article = document.querySelector("#article");
+      const mainPrivious = article.previousElementSibling;
+
+      console.log(`by Id ${mainId}`);
+      console.log(`by ClassName ${mainClassName}`);
+      console.log(`by Name ${mainName}`);
+      console.log(`by TagName ${mainTagName}`);
+
+      console.log(`selector className ${mainSelectorClassName}`);
+      console.log(`selector Id ${mainSelectorId}`);
+
+      console.log(`mainAfterHeader ${mainNextSibling}`);
+      console.log(`mainPrivious ${mainPrivious}`);
+    </script>
+  </body>
+</html>
